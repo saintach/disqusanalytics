@@ -5,14 +5,14 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Page 1</title>
+	<title>Page 2</title>
 </head>
 
 <body>
 
 	<header>
 		<nav>
-			<h1>Page 1</h1>
+			<h1>Page 2</h1>
 		</nav>
 	</header>
 	
@@ -20,7 +20,27 @@
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
         var disqus_shortname = 'disqusstat'; // required: replace example with your forum shortname
-        var disqus_identifier = 'page1';
+        var disqus_identifier = 'page2';
+        function disqus_config() {
+        	console.log(this.callbacks);
+        	
+        	this.callbacks.afterRander = [function(){ console.log('afterRander'); }];
+        	this.callbacks.beforeComment = [function(){ console.log('beforeComment'); }];
+        	this.callbacks.onInit = [function(){ console.log('onInit'); }];
+        	this.callbacks.onNewComment = [function(){ console.log('onNewComment'); }];
+        	this.callbacks.preData = [function(){ console.log('preData'); }];
+        	this.callbacks.preInit = [function(){ console.log('preInit'); }];
+        	this.callbacks.preReset = [function(){ console.log('preReset'); }];
+        	this.callbacks.onReady = [function(e){ 
+        		console.log('onReady'); 
+        		console.log(this.settings);
+        	}];
+        	this.callbacks.onIdentify = [function(){ 
+        		console.log('onIdentify'); 
+        		console.log(this);
+        	}];
+        }
+        
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
             var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
