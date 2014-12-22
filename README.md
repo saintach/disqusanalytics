@@ -1,4 +1,4 @@
 disqusanalytics
 ===============
 
-Disqus Statistical Analytics
+Statistical analytics library for Disqus 
